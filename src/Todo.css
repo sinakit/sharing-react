@@ -1,0 +1,242 @@
+.todo-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.todo-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.todo-header h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.todo-header p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.todo-input-wrapper {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.todo-input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  background: #ffffff;
+  color: #2d3748;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  font-weight: 500;
+}
+
+.todo-input:focus {
+  outline: none;
+  background: #ffffff;
+  color: #1a202c;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.todo-input::placeholder {
+  color: #a0aec0;
+  font-weight: 400;
+}
+
+.todo-table-wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.todo-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.todo-table th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  border: none;
+}
+
+.todo-table th:first-child {
+  width: 80px;
+  text-align: center;
+}
+
+.todo-table th:last-child {
+  width: 180px;
+  text-align: center;
+}
+
+.todo-table tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.todo-table tbody tr:hover {
+  background: rgba(102, 126, 234, 0.05);
+  transform: translateX(5px);
+}
+
+.todo-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.todo-table td {
+  padding: 1rem;
+  color: #333;
+  border: none;
+}
+
+.todo-table td:first-child {
+  text-align: center;
+  font-weight: 600;
+  color: #667eea;
+  font-size: 1.1rem;
+}
+
+.todo-item-text {
+  font-size: 1rem;
+  color: #2d3748;
+  word-break: break-word;
+}
+
+.todo-actions {
+  text-align: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.todo-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.todo-btn-edit {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.todo-btn-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+.todo-btn-delete {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  box-shadow: 0 4px 10px rgba(245, 87, 108, 0.3);
+}
+
+.todo-btn-delete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(245, 87, 108, 0.4);
+}
+
+.todo-empty-state {
+  padding: 3rem 2rem;
+  text-align: center;
+  color: #999;
+}
+
+.todo-empty-state p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.todo-empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .todo-header h2 {
+    font-size: 2rem;
+  }
+
+  .todo-table th,
+  .todo-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .todo-actions {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .todo-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .todo-table th:first-child,
+  .todo-table td:first-child {
+    width: 50px;
+  }
+
+  .todo-table th:last-child,
+  .todo-table td:last-child {
+    width: 100px;
+  }
+}
+
+/* Animation for new items */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo-table tbody tr {
+  animation: slideIn 0.3s ease;
+}

@@ -1,14 +1,11 @@
-import { RecoilRoot } from 'recoil'
 import './App.css'
-import Parent from './Parent'
-import ParentOther from './ParentOther'
+import Todo from './Todo'
 
 function App() {
 
   return (
     <>
-     <Parent />
-      <ParentOther />
+     <Todo />
     </>
      
   )
