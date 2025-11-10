@@ -1,18 +1,18 @@
 
 interface IProps {
-    fullName: string,
     counter?: number,
-    onIncreaseCounter?: () => void
+    callBackCounter: (num: number) => void
 }
 
-const Child = (prop:IProps) => {
-    const {fullName, counter, onIncreaseCounter} = prop;
+const Child = (props:IProps) => {
+
   return (
     <div>
         <h3>Child Component</h3>
-        <h3>First Child: {fullName}</h3>
-        <h3>Child counter:{counter}</h3>
-        <button onClick={onIncreaseCounter}>Increase Counter from Child</button>
+        <h3>Child counter:{props.counter}</h3>
+        <button onClick={() => {
+            props.callBackCounter(props.counter ? props.counter + 1 : 1)
+        }}> Increase Counter Child</button>
         {/* <SecondChild /> */}
         </div>
     )

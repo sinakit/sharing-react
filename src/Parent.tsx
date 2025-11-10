@@ -1,27 +1,17 @@
+import { useState } from "react";
 import Child from "./Child";
-import { useParentState } from "./states/useParent";
 
 const Parent = () => {
-  const { globalCounter, setGlobalCounter } = useParentState();
-  const increaseCounter = () => {
-    setGlobalCounter(globalCounter + 1);
-  };
-  const decreaseCounter = (count: number) => {
-    setGlobalCounter(count);
-  };
-
+  const [counter, setCounter] = useState(1);
   return (
     <div>
       <h2>Parent Component</h2>
-      <h3>Parent Counter: {globalCounter}</h3>
-      <button onClick={increaseCounter}>Increase Counter</button>
-      <Child
-        fullName="Cheav Roth"
-        counter={globalCounter}
-        onIncreaseCounter={() => {
-          decreaseCounter(globalCounter + 1);
-        }}
-      />
+      <button onClick={() => setCounter(counter + 1)}> Increase Counter</button>
+      <p>Counter on parent: {counter}</p>
+      <Child counter={counter} callBackCounter={(num: number)=>{
+        setCounter(num)
+      }}/>
+      {/* <Child counter={counter} /> */}
     </div>
   );
 };
